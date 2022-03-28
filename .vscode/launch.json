@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Products API",
             "type": "coreclr",
@@ -51,9 +52,26 @@
             }
         },
         {
-            "name": ".NET Core Attach",
+            "name": "Order API",
             "type": "coreclr",
-            "request": "attach"
-        }
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/ECommerce.Api.Orders/bin/Debug/netcoreapp3.1/ECommerce.Api.Orders.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ECommerce.Api.Orders",
+            "stopAtEntry": false,
+            "launchSettingsFilePath": "${workspaceFolder}/ECommerce.Api.Orders/Properties/launchSettings.json",
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+                "uriFormat": "%s/api/orders"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
     ]
 }
