@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ECommerce.Api.Customers.Controllers
 {
     [ApiController]
-    [Route("api/customer")]
+    [Route("api/customers")]
     public class CustomerController : ControllerBase
     {
         private readonly ICustomerProvider customerProvider;
